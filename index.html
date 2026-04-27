@@ -463,7 +463,7 @@
             const res = await fetch(`${API_BASE}/employees`);
             const data = await res.json();
             document.getElementById('employee-table-body').innerHTML = data.map(e => `
-                <tr><td>#${e.EmployeeID}</td><td>${e.NAME}</td><td>${e.Role}</td><td>${e.Phone}</td></tr>
+                <tr><td>#${e.EmployeeID}</td><td>${e.Name}</td><td>${e.Role}</td><td>${e.Phone}</td></tr>
             `).join('');
         }
 
@@ -562,8 +562,8 @@
             const emps = await (await fetch(`${API_BASE}/employees`)).json();
 
             document.getElementById('order-cust-select').innerHTML = custs.map(c => `<option data-id="${c.CustomerID}">${c.NAME}</option>`).join('');
-            document.getElementById('order-prod-select').innerHTML = prods.map(p => `<option data-id="${p.ProductID}" data-price="${p.Price}">${p.Name} ($${p.Price})</option>`).join('');
-            document.getElementById('order-emp-select').innerHTML = emps.map(e => `<option data-id="${e.EmployeeID}">${e.NAME}</option>`).join('');
+            document.getElementById('order-prod-select').innerHTML = prods.map(p => `<option data-id="${p.ProductID}" data-price="${p.Price}">${p.NAME} ($${p.Price})</option>`).join('');
+            document.getElementById('order-emp-select').innerHTML = emps.map(e => `<option data-id="${e.EmployeeID}">${e.Name}</option>`).join('');
         }
 
         function notify(msg, type = 'success') {
